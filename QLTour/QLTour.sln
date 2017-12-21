@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour", "WebTour\WebTour.csproj", "{59339FB1-2300-4A28-8B09-2E5A37E63B2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTour", "WinTour\WinTour.csproj", "{209BD0F9-589C-4FAE-8563-CC55481ED485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusAndModel", "BusAndModel\BusAndModel.csproj", "{4C56DE45-AE61-4D61-9AE7-64026008BDC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59339FB1-2300-4A28-8B09-2E5A37E63B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59339FB1-2300-4A28-8B09-2E5A37E63B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59339FB1-2300-4A28-8B09-2E5A37E63B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59339FB1-2300-4A28-8B09-2E5A37E63B2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209BD0F9-589C-4FAE-8563-CC55481ED485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209BD0F9-589C-4FAE-8563-CC55481ED485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209BD0F9-589C-4FAE-8563-CC55481ED485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209BD0F9-589C-4FAE-8563-CC55481ED485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

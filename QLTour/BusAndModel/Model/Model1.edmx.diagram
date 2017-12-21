@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8093c568d66541dc824628dcd8cc4021" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="Model1.Tour" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.LoaiDL" Width="1.5" PointX="12.125" PointY="2.625" />
+        <EntityTypeShape EntityType="Model1.GiaTour" Width="1.5" PointX="9.75" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.DiaDiem" Width="1.5" PointX="3.875" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.TinhThanh" Width="1.5" PointX="1.625" PointY="0.625" />
+        <AssociationConnector Association="Model1.TinhThanhDiaDiem" />
+        <AssociationConnector Association="Model1.LoaiDLTour" />
+        <AssociationConnector Association="Model1.TourGiaTour" />
+        <EntityTypeShape EntityType="Model1.CTTour" Width="1.5" PointX="7.125" PointY="0.625" />
+        <AssociationConnector Association="Model1.TourCTTour" />
+        <AssociationConnector Association="Model1.DiaDiemCTTour" />
+        <EntityTypeShape EntityType="Model1.KhachHang" Width="1.5" PointX="6.75" PointY="3.5" />
+        <EntityTypeShape EntityType="Model1.DoanKhach" Width="1.5" PointX="3.125" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.NhiemVu" Width="1.5" PointX="0.5" PointY="2.625" />
+        <EntityTypeShape EntityType="Model1.DSKhachTheoDoan" Width="1.5" PointX="5" PointY="3.5" />
+        <AssociationConnector Association="Model1.DoanKhachDSKhachTheoDoan" />
+        <AssociationConnector Association="Model1.KhachHangDSKhachTheoDoan" />
+        <EntityTypeShape EntityType="Model1.NhanVien" Width="1.5" PointX="0.5" PointY="4.375" />
+        <EntityTypeShape EntityType="Model1.NhanVienTheoDoan" Width="1.5" PointX="0.625" PointY="6.375" />
+        <AssociationConnector Association="Model1.TourDoanKhach" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tours" EntityType="Model1.Tour" />
+          <EntitySet Name="LoaiDLs" EntityType="Model1.LoaiDL" />
+          <EntitySet Name="GiaTours" EntityType="Model1.GiaTour" />
+          <EntitySet Name="DiaDiems" EntityType="Model1.DiaDiem" />
+          <EntitySet Name="TinhThanhs" EntityType="Model1.TinhThanh" />
+          <AssociationSet Name="TinhThanhDiaDiem" Association="Model1.TinhThanhDiaDiem">
+            <End Role="TinhThanh" EntitySet="TinhThanhs" />
+            <End Role="DiaDiem" EntitySet="DiaDiems" />
+          </AssociationSet>
+          <AssociationSet Name="LoaiDLTour" Association="Model1.LoaiDLTour">
+            <End Role="LoaiDL" EntitySet="LoaiDLs" />
+            <End Role="Tour" EntitySet="Tours" />
+          </AssociationSet>
+          <AssociationSet Name="TourGiaTour" Association="Model1.TourGiaTour">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="GiaTour" EntitySet="GiaTours" />
+          </AssociationSet>
+          <EntitySet Name="CTTours" EntityType="Model1.CTTour" />
+          <AssociationSet Name="TourCTTour" Association="Model1.TourCTTour">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="CTTour" EntitySet="CTTours" />
+          </AssociationSet>
+          <AssociationSet Name="DiaDiemCTTour" Association="Model1.DiaDiemCTTour">
+            <End Role="DiaDiem" EntitySet="DiaDiems" />
+            <End Role="CTTour" EntitySet="CTTours" />
+          </AssociationSet>
+          <EntitySet Name="KhachHangs" EntityType="Model1.KhachHang" />
+          <EntitySet Name="DoanKhaches" EntityType="Model1.DoanKhach" />
+          <EntitySet Name="NhiemVus" EntityType="Model1.NhiemVu" />
+          <EntitySet Name="DSKhachTheoDoans" EntityType="Model1.DSKhachTheoDoan" />
+          <AssociationSet Name="DoanKhachDSKhachTheoDoan" Association="Model1.DoanKhachDSKhachTheoDoan">
+            <End Role="DoanKhach" EntitySet="DoanKhaches" />
+            <End Role="DSKhachTheoDoan" EntitySet="DSKhachTheoDoans" />
+          </AssociationSet>
+          <AssociationSet Name="KhachHangDSKhachTheoDoan" Association="Model1.KhachHangDSKhachTheoDoan">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="DSKhachTheoDoan" EntitySet="DSKhachTheoDoans" />
+          </AssociationSet>
+          <EntitySet Name="NhanViens" EntityType="Model1.NhanVien" />
+          <EntitySet Name="NhanVienTheoDoans" EntityType="Model1.NhanVienTheoDoan" />
+          <AssociationSet Name="TourDoanKhach" Association="Model1.TourDoanKhach">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="DoanKhach" EntitySet="DoanKhaches" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Tour">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenGoi" Type="String" Nullable="false" />
+          <Property Name="DacDiem" Type="String" Nullable="false" />
+          <NavigationProperty Name="LoaiDL" Relationship="Model1.LoaiDLTour" FromRole="Tour" ToRole="LoaiDL" />
+          <Property Name="LoaiDLId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GiaTours" Relationship="Model1.TourGiaTour" FromRole="Tour" ToRole="GiaTour" />
+          <NavigationProperty Name="CTTours" Relationship="Model1.TourCTTour" FromRole="Tour" ToRole="CTTour" />
+          <NavigationProperty Name="DoanKhaches" Relationship="Model1.TourDoanKhach" FromRole="Tour" ToRole="DoanKhach" />
+        </EntityType>
+        <EntityType Name="LoaiDL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenGoi" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tours" Relationship="Model1.LoaiDLTour" FromRole="LoaiDL" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="GiaTour">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gia" Type="Int32" Nullable="false" />
+          <Property Name="NgayCapNhat" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Tour" Relationship="Model1.TourGiaTour" FromRole="GiaTour" ToRole="Tour" />
+          <Property Name="TourId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DiaDiem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDiaDiem" Type="String" Nullable="false" />
+          <NavigationProperty Name="TinhThanh" Relationship="Model1.TinhThanhDiaDiem" FromRole="DiaDiem" ToRole="TinhThanh" />
+          <Property Name="TinhThanhId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CTTours" Relationship="Model1.DiaDiemCTTour" FromRole="DiaDiem" ToRole="CTTour" />
+        </EntityType>
+        <EntityType Name="TinhThanh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaTinh" Type="String" Nullable="false" />
+          <Property Name="TenTinh" Type="String" Nullable="false" />
+          <NavigationProperty Name="DiaDiems" Relationship="Model1.TinhThanhDiaDiem" FromRole="TinhThanh" ToRole="DiaDiem" />
+        </EntityType>
+        <Association Name="TinhThanhDiaDiem">
+          <End Type="Model1.TinhThanh" Role="TinhThanh" Multiplicity="1" />
+          <End Type="Model1.DiaDiem" Role="DiaDiem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TinhThanh">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DiaDiem">
+              <PropertyRef Name="TinhThanhId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LoaiDLTour">
+          <End Type="Model1.LoaiDL" Role="LoaiDL" Multiplicity="1" />
+          <End Type="Model1.Tour" Role="Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiDL">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tour">
+              <PropertyRef Name="LoaiDLId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TourGiaTour">
+          <End Type="Model1.Tour" Role="Tour" Multiplicity="1" />
+          <End Type="Model1.GiaTour" Role="GiaTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GiaTour">
+              <PropertyRef Name="TourId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CTTour">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Tour" Relationship="Model1.TourCTTour" FromRole="CTTour" ToRole="Tour" />
+          <Property Name="TourId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DiaDiem" Relationship="Model1.DiaDiemCTTour" FromRole="CTTour" ToRole="DiaDiem" />
+          <Property Name="DiaDiemId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TourCTTour">
+          <End Type="Model1.Tour" Role="Tour" Multiplicity="1" />
+          <End Type="Model1.CTTour" Role="CTTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CTTour">
+              <PropertyRef Name="TourId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiaDiemCTTour">
+          <End Type="Model1.DiaDiem" Role="DiaDiem" Multiplicity="1" />
+          <End Type="Model1.CTTour" Role="CTTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiaDiem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CTTour">
+              <PropertyRef Name="DiaDiemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" Nullable="false" />
+          <Property Name="CMND" Type="String" Nullable="false" />
+          <Property Name="DiaChi" Type="String" Nullable="false" />
+          <Property Name="SDT" Type="String" Nullable="false" />
+          <Property Name="GioiTinh" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DSKhachTheoDoans" Relationship="Model1.KhachHangDSKhachTheoDoan" FromRole="KhachHang" ToRole="DSKhachTheoDoan" />
+        </EntityType>
+        <EntityType Name="DoanKhach">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenGoi" Type="String" Nullable="false" />
+          <Property Name="NgayKhoiHanh" Type="DateTime" Nullable="false" />
+          <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" />
+          <Property Name="TongKS" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="DSKhachTheoDoans" Relationship="Model1.DoanKhachDSKhachTheoDoan" FromRole="DoanKhach" ToRole="DSKhachTheoDoan" />
+          <Property Name="TongAn" Type="Int32" Nullable="true" />
+          <Property Name="TongPT" Type="Int32" Nullable="true" />
+          <Property Name="TongKhac" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Tour" Relationship="Model1.TourDoanKhach" FromRole="DoanKhach" ToRole="Tour" />
+          <Property Name="TourId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhiemVu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNhiemVu" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DSKhachTheoDoan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="DoanKhach" Relationship="Model1.DoanKhachDSKhachTheoDoan" FromRole="DSKhachTheoDoan" ToRole="DoanKhach" />
+          <Property Name="DoanKhachId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KhachHang" Relationship="Model1.KhachHangDSKhachTheoDoan" FromRole="DSKhachTheoDoan" ToRole="KhachHang" />
+          <Property Name="KhachHangId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="DoanKhachDSKhachTheoDoan">
+          <End Type="Model1.DoanKhach" Role="DoanKhach" Multiplicity="1" />
+          <End Type="Model1.DSKhachTheoDoan" Role="DSKhachTheoDoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoanKhach">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DSKhachTheoDoan">
+              <PropertyRef Name="DoanKhachId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KhachHangDSKhachTheoDoan">
+          <End Type="Model1.KhachHang" Role="KhachHang" Multiplicity="1" />
+          <End Type="Model1.DSKhachTheoDoan" Role="DSKhachTheoDoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DSKhachTheoDoan">
+              <PropertyRef Name="KhachHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNhanVien" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhanVienTheoDoan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhiemVu" Type="Int32" Nullable="false" />
+          <Property Name="idNhanVien" Type="Int32" Nullable="false" />
+          <Property Name="idDoanKhach" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TourDoanKhach">
+          <End Type="Model1.Tour" Role="Tour" Multiplicity="1" />
+          <End Type="Model1.DoanKhach" Role="DoanKhach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoanKhach">
+              <PropertyRef Name="TourId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
