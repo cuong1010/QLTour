@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/22/2017 18:50:49
+-- Date Created: 12/23/2017 00:52:58
 -- Generated from EDMX file: C:\Users\PC\Documents\Visual Studio 2015\Projects\XDMHPL_Tour\QLTour\BusAndModel\Model\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [QLTour];
+USE [QLMa];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -158,7 +158,7 @@ CREATE TABLE [dbo].[DoanKhaches] (
     [TongPT] int  NULL,
     [TongKhac] int  NULL,
     [TourId] int  NOT NULL,
-    [SLCho] int  NOT NULL
+    [TongSLCon] int  NOT NULL
 );
 GO
 

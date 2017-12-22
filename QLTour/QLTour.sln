@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour", "WebTour\WebTour.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusAndModel", "BusAndModel\BusAndModel.csproj", "{4C56DE45-AE61-4D61-9AE7-64026008BDC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTour", "WinTour\WinTour.csproj", "{728FD39B-94D3-4686-AF4B-21F549434104}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C56DE45-AE61-4D61-9AE7-64026008BDC0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{728FD39B-94D3-4686-AF4B-21F549434104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{728FD39B-94D3-4686-AF4B-21F549434104}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{728FD39B-94D3-4686-AF4B-21F549434104}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{728FD39B-94D3-4686-AF4B-21F549434104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
