@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusAndModel
+namespace WinTour.DATA
 {
-    public class Class1
+    class Database
     {
     }
 }
