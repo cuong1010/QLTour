@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.width100{
+    width : 100%
+}

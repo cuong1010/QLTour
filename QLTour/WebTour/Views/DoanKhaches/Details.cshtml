@@ -1,0 +1,83 @@
+﻿@model BusAndModel.Model.DoanKhach
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DoanKhach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenGoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKhoiHanh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKhoiHanh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKetThuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongKS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongKS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongPT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongPT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongKhac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongKhac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tour.TenGoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour.TenGoi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

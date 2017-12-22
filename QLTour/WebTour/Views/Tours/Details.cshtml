@@ -1,0 +1,43 @@
+﻿@model BusAndModel.Model.Tour
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenGoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DacDiem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DacDiem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiDL.TenGoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiDL.TenGoi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

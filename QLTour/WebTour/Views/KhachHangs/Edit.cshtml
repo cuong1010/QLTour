@@ -1,0 +1,62 @@
+﻿@model BusAndModel.Model.KhachHang
+
+@{
+    ViewBag.Title = "Cập nhật thông tin khách hàng";
+}
+
+
+
+@using (Html.BeginForm("Edit", "KhachHangs", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="box-header with-border">
+        <h3 class="box-title">Thêm thông tin hành khách</h3>
+        <div class="box-tools pull-right">
+            <button type="submit" class="btn btn-box-tool">
+                <i class="fa fa-check" style="font-size:16px"></i>
+            </button>
+            <span class="btn btn-box-tool" onclick="location.href='/KhachHangs/Index'">
+                <i class="fa fa-times" style="font-size:16px"></i>
+            </span>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            @Html.AntiForgeryToken()
+            <!-------------------------------------COL12------------------------------------>
+            <div class="col-md-12">
+                <div class="form-group minHeight80">
+                    <label>Họ và Tên</label>
+                    @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nhập họ..." } })
+                    @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group minHeight80">
+                    <label>Số CMND</label>
+
+                    @Html.EditorFor(model => model.CMND, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nhập số CMND..." } })
+                    @Html.ValidationMessageFor(model => model.CMND, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group minHeight80">
+                    <label>Địa chỉ liên hệ</label>
+                    @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nhập địa chỉ..." } })
+                    @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group minHeight80">
+                    <label>Số điện thoại</label>
+                    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nhập Số điện thoại..." } })
+                    @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group minHeight80">
+                    <label>Giới Tính</label>
+                    @Html.EditorFor(model => model.GioiTinh, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nhập Giới tính..." } })
+                    @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+}

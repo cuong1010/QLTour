@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BusAndModel.Model.KhachHang>
+
+@{
+    ViewBag.Title = "Danh Sách Khách Hàng";
+}
+
+<div class="box">
+    <div class="box-header text-center">
+        <h3>Danh sách hành khách</h3>
+        <div class="box-tools pull-right">
+            <span class="btn btn-box-tool" onclick="location.href='/KhachHangs/Create'">
+                <i class="fa fa-plus" style="font-size:16px"></i>
+            </span>
+        </div>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Họ và Tên</th>
+                    <th>CMND</th>
+                    <th>Địa Chỉ</th>
+                    <th>Số điện thoại</th>
+                    <th>Giới tính</th>
+                    <th>Chức Năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.HoTen</td>
+                        <td>@item.CMND</td>
+                        <td>@item.DiaChi</td>
+                        <td>@item.SDT</td>
+                        <td>@item.GioiTinh</td>
+                        <td class="text-center">
+                            <button type="submit" class="btn btn-box-tool" onclick="location.href='/KhachHangs/Edit/'+@item.Id">
+                                <i class="fa fa-edit" style="font-size:15px"></i>
+                            </button>
+                            <button type="submit" class="btn btn-box-tool" onclick="location.href='/KhachHangs/Delete/'+@item.Id">
+                                <i class="fa fa-times" style="font-size:15px"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Id</th>
+                    <th>Họ và Tên</th>
+                    <th>CMND</th>
+                    <th>Địa Chỉ</th>
+                    <th>Số điện thoại</th>
+                    <th>Giới tính</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
