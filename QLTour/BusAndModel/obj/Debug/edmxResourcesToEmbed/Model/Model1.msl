@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Tours">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Tour)">
+        <MappingFragment StoreEntitySet="Tours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenGoi" ColumnName="TenGoi" />
+          <ScalarProperty Name="DacDiem" ColumnName="DacDiem" />
+          <ScalarProperty Name="LoaiDLId" ColumnName="LoaiDLId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiDLs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.LoaiDL)">
+        <MappingFragment StoreEntitySet="LoaiDLs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenGoi" ColumnName="TenGoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiaTours">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.GiaTour)">
+        <MappingFragment StoreEntitySet="GiaTours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="TourId" ColumnName="TourId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiaDiems">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DiaDiem)">
+        <MappingFragment StoreEntitySet="DiaDiems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenDiaDiem" ColumnName="TenDiaDiem" />
+          <ScalarProperty Name="TinhThanhId" ColumnName="TinhThanhId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinhThanhs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.TinhThanh)">
+        <MappingFragment StoreEntitySet="TinhThanhs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MaTinh" ColumnName="MaTinh" />
+          <ScalarProperty Name="TenTinh" ColumnName="TenTinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTTours">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.CTTour)">
+        <MappingFragment StoreEntitySet="CTTours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TourId" ColumnName="TourId" />
+          <ScalarProperty Name="DiaDiemId" ColumnName="DiaDiemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.KhachHang)">
+        <MappingFragment StoreEntitySet="KhachHangs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanKhaches">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DoanKhach)">
+        <MappingFragment StoreEntitySet="DoanKhaches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenGoi" ColumnName="TenGoi" />
+          <ScalarProperty Name="NgayKhoiHanh" ColumnName="NgayKhoiHanh" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+          <ScalarProperty Name="TongKS" ColumnName="TongKS" />
+          <ScalarProperty Name="TongAn" ColumnName="TongAn" />
+          <ScalarProperty Name="TongPT" ColumnName="TongPT" />
+          <ScalarProperty Name="TongKhac" ColumnName="TongKhac" />
+          <ScalarProperty Name="TourId" ColumnName="TourId" />
+          <ScalarProperty Name="SLCho" ColumnName="SLCho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhiemVus">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.NhiemVu)">
+        <MappingFragment StoreEntitySet="NhiemVus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenNhiemVu" ColumnName="TenNhiemVu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSKhachTheoDoans">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DSKhachTheoDoan)">
+        <MappingFragment StoreEntitySet="DSKhachTheoDoans">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DoanKhachId" ColumnName="DoanKhachId" />
+          <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.NhanVien)">
+        <MappingFragment StoreEntitySet="NhanViens">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanVienTheoDoans">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.NhanVienTheoDoan)">
+        <MappingFragment StoreEntitySet="NhanVienTheoDoans">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idNhiemVu" ColumnName="idNhiemVu" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="idDoanKhach" ColumnName="idDoanKhach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
